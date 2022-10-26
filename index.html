@@ -319,6 +319,7 @@
           meta: 'BASE editorial team',
           date: 'October 20, 2022',
           author: 'Hannah Mitchell',
+          star: 2,
           url: '#',
           imageSrc: 'images/card-1.webp',
         },
@@ -328,6 +329,7 @@
           meta: 'Hannah Mitchell',
           date: 'October 19, 2022',
           author: 'Hannah Mitchell',
+          star: 3,
           url: '#',
           imageSrc: 'images/card-2.webp',
         },
@@ -337,6 +339,7 @@
           meta: 'BASE editorial team',
           date: 'October 11, 2022',
           author: 'Hannah Mitchell',
+          star: 5,
           url: '#',
           imageSrc: 'images/card-3.webp',
         },
@@ -346,6 +349,7 @@
           meta: 'BASE editorial team',
           date: 'October 06, 2022',
           author: 'Hannah Mitchell',
+          star: 1,
           url: '#',
           imageSrc: 'images/card-4.webp',
         },
@@ -355,6 +359,7 @@
           meta: 'BASE editorial team',
           date: 'October 05, 2022',
           author: 'Hannah Mitchell',
+          star: 3.5,
           url: '#',
           imageSrc: 'images/card-5.webp',
         },
@@ -364,6 +369,7 @@
           meta: 'BASE editorial team',
           date: 'September 03, 2022',
           author: 'Hannah Mitchell',
+          star: 2.5,
           url: '#',
           imageSrc: 'images/card-6.webp',
         },
@@ -373,6 +379,7 @@
           meta: 'BASE editorial team',
           date: 'September 29, 2022',
           author: 'Hannah Mitchell',
+          star: 4.5,
           url: '#',
           imageSrc: 'images/card-7.webp',
         },
@@ -382,6 +389,7 @@
           meta: 'BASE editorial team',
           date: 'September 27, 2022',
           author: 'Hannah Mitchell',
+          star: 2,
           url: '#',
           imageSrc: 'images/card-8.webp',
         },
@@ -391,6 +399,7 @@
           meta: 'BASE editorial team',
           date: 'September 26, 2022',
           author: 'Hannah Mitchell',
+          star: 1,
           url: '#',
           imageSrc: 'images/card-9.webp',
         },
@@ -400,6 +409,7 @@
           meta: 'BASE editorial team',
           date: 'October 20, 2022',
           author: 'Hannah Mitchell',
+          star: 5,
           url: '#',
           imageSrc: 'images/card-1.webp',
         },
@@ -409,6 +419,7 @@
           meta: 'Hannah Mitchell',
           date: 'October 19, 2022',
           author: 'Hannah Mitchell',
+          star: 4.5,
           url: '#',
           imageSrc: 'images/card-2.webp',
         },
@@ -418,6 +429,7 @@
           meta: 'BASE editorial team',
           date: 'October 11, 2022',
           author: 'Hannah Mitchell',
+          star: 1,
           url: '#',
           imageSrc: 'images/card-3.webp',
         },
@@ -427,6 +439,7 @@
           meta: 'BASE editorial team',
           date: 'October 06, 2022',
           author: 'Hannah Mitchell',
+          star: 5,
           url: '#',
           imageSrc: 'images/card-4.webp',
         },
@@ -436,6 +449,7 @@
           meta: 'BASE editorial team',
           date: 'October 05, 2022',
           author: 'Hannah Mitchell',
+          star: 4,
           url: '#',
           imageSrc: 'images/card-5.webp',
         },
@@ -445,6 +459,7 @@
           meta: 'BASE editorial team',
           date: 'September 03, 2022',
           author: 'Hannah Mitchell',
+          star: 2,
           url: '#',
           imageSrc: 'images/card-6.webp',
         },
@@ -454,6 +469,7 @@
           meta: 'BASE editorial team',
           date: 'September 29, 2022',
           author: 'Hannah Mitchell',
+          star: 2,
           url: '#',
           imageSrc: 'images/card-7.webp',
         },
@@ -463,6 +479,7 @@
           meta: 'BASE editorial team',
           date: 'September 27, 2022',
           author: 'Hannah Mitchell',
+          star: 3,
           url: '#',
           imageSrc: 'images/card-8.webp',
         },
@@ -472,6 +489,7 @@
           meta: 'BASE editorial team',
           date: 'September 26, 2022',
           author: 'Hannah Mitchell',
+          star: 4,
           url: '#',
           imageSrc: 'images/card-9.webp',
         },
@@ -501,6 +519,22 @@
                 <a :href="card.url" class="text-[#111111] hover:text-[#766d66]" x-text="card.title">
                 </a>
               </h4>
+              <!-- CARD STARS -->
+              <div
+                class="mb-2 text-xl cursor-default inline-block font-bold bg-clip-text text-transparent bg-[linear-gradient(90deg,#fc0_60%,#dedede_0)]"
+                :class="{
+                  'bg-[linear-gradient(90deg,#fc0_20%,#dedede_0)]' : card.star === 1,
+                  'bg-[linear-gradient(90deg,#fc0_30%,#dedede_0)]' : card.star === 1.5,
+                  'bg-[linear-gradient(90deg,#fc0_40%,#dedede_0)]' : card.star === 2,
+                  'bg-[linear-gradient(90deg,#fc0_50%,#dedede_0)]' : card.star === 2.5,
+                  'bg-[linear-gradient(90deg,#fc0_60%,#dedede_0)]' : card.star === 3,
+                  'bg-[linear-gradient(90deg,#fc0_70%,#dedede_0)]' : card.star === 3.5,
+                  'bg-[linear-gradient(90deg,#fc0_80%,#dedede_0)]' : card.star === 4,
+                  'bg-[linear-gradient(90deg,#fc0_90%,#dedede_0)]' : card.star === 4.5,
+                  'bg-[linear-gradient(90deg,#fc0_100%,#dedede_0)]' : card.star === 5,
+                  }">
+                ★★★★★
+              </div>
               <!-- CARD DETAIL -->
               <p class="mb-5 leading-tight text-xl text-[#454545]" x-text="card.detail"></p>
             </div>
@@ -513,21 +547,6 @@
           class="p-3 text-base leading-5 inline-block rounded uppercase tracking-wider transition-all font-medium text-[#f79400] border border-[#f79400] pointer-events-none opacity-75">1</a>
         <a href="#"
           class="p-3 text-base leading-5 inline-block rounded uppercase tracking-wider transition-all font-medium text-[#f79400] border border-[#f79400] hover:text-white hover:bg-[#f79400]">2</a>
-        <a href="#"
-          class="p-3 text-base leading-5 inline-block rounded uppercase tracking-wider transition-all font-medium text-[#f79400] border border-[#f79400] hover:text-white hover:bg-[#f79400]">...</a>
-        <a href="#"
-          class="p-3 text-base leading-5 inline-block rounded uppercase tracking-wider transition-all font-medium text-[#f79400] border border-[#f79400] hover:text-white hover:bg-[#f79400]">4</a>
-        <a href="#"
-          class="p-3 text-base leading-5 inline-flex rounded uppercase tracking-wider transition-all font-medium text-[#f79400] border border-[#f79400] hover:text-white hover:bg-[#f79400] items-center justify-center">
-          Next
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-              <path fill-rule="evenodd"
-                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                clip-rule="evenodd" />
-            </svg>
-          </span>
-        </a>
       </div>
     </div>
   </section>
